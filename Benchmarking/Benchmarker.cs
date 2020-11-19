@@ -16,20 +16,20 @@ namespace Benchmarking
         {
             public uint Load { get; }
 
-            public uint Milliseconds { get; }
+            public double Milliseconds { get; }
 
             public double Speed { get; }
 
             public Result(uint load, TimeSpan elapsedTime)
             {
                 this.Load = load;
-                this.Milliseconds = (uint)elapsedTime.TotalMilliseconds;
+                this.Milliseconds = elapsedTime.TotalMilliseconds;
                 this.Speed = load / elapsedTime.TotalMilliseconds;
             }
 
             public string Explain(string nameOfLoadUnit, string pluralNameOfLoad)
             {
-                return $"{Load} {(Load > 1 ? pluralNameOfLoad : nameOfLoadUnit)} dauerte {Milliseconds} Millisekunden - Tempo = {Speed}";
+                return $"{Load,12} {(Load > 1 ? pluralNameOfLoad : nameOfLoadUnit)} dauerte {Milliseconds,9:F1} Millisekunden bei Tempo = {Speed:E2} ({nameOfLoadUnit} pro Sekunde)";
             }
         }
 
@@ -54,7 +54,7 @@ namespace Benchmarking
 
             if (loadPerSecond == 0.0)
             {
-                throw new ApplicationException($"Die Implementierung von {implementation.Name} ist schlicht so schnell, dass die Messung von ihrem Tempo unmöglich ist.");
+                throw new ApplicationException($"Die Implementierung von '{implementation.Name}' ist schlicht so schnell, dass die Messung von ihrem Tempo unmöglich ist.");
             }
 
             var targetedTimeLapses = new TimeSpan[] {
