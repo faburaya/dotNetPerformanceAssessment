@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoopsPerformanceComparison", "LoopsPerformanceComparison\LoopsPerformanceComparison.csproj", "{89D3FD89-A946-4031-BBD8-17A126A678F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarking", "Benchmarking\Benchmarking.csproj", "{064FC7EE-47B5-4115-999F-B0432E763E5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89D3FD89-A946-4031-BBD8-17A126A678F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D3FD89-A946-4031-BBD8-17A126A678F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D3FD89-A946-4031-BBD8-17A126A678F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D3FD89-A946-4031-BBD8-17A126A678F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064FC7EE-47B5-4115-999F-B0432E763E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064FC7EE-47B5-4115-999F-B0432E763E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064FC7EE-47B5-4115-999F-B0432E763E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064FC7EE-47B5-4115-999F-B0432E763E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFE48E8B-03AA-4DEE-99AC-B4C84EF09DF3}
+	EndGlobalSection
+EndGlobal
