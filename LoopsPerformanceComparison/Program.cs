@@ -21,6 +21,8 @@ namespace LoopsPerformanceComparison
                     Console.WriteLine(measurement.Explain("Durchlauf", "Durchläufe"));
                 }
             }
+
+            Console.WriteLine("Ende!");
         }
     }
 }

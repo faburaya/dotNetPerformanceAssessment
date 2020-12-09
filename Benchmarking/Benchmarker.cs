@@ -29,7 +29,7 @@ namespace Benchmarking
 
             public string Explain(string nameOfLoadUnit, string pluralNameOfLoad)
             {
-                return $"{Load,12} {(Load > 1 ? pluralNameOfLoad : nameOfLoadUnit)} dauerte {Milliseconds,9:F1} Millisekunden bei Tempo = {Speed:E2} ({nameOfLoadUnit} pro Sekunde)";
+                return $"{Load,15:N} {(Load > 1 ? pluralNameOfLoad : nameOfLoadUnit)} dauerte {Milliseconds,8:N} Millisekunden bei Tempo = {Speed:E2} ({nameOfLoadUnit} pro Sekunde)";
             }
         }
 
@@ -45,7 +45,7 @@ namespace Benchmarking
             for (uint load = 1; load < maxLoad; load *= 10)
             {
                 TimeSpan elapsed = Measure(implementation, load);
-                if (elapsed.TotalMilliseconds >= 5)
+                if (elapsed.TotalMilliseconds >= 50)
                 {
                     loadPerSecond = 1000 * load / elapsed.TotalMilliseconds;
                     break;
@@ -60,13 +60,13 @@ namespace Benchmarking
             var targetedTimeLapses = new TimeSpan[] {
                 TimeSpan.FromSeconds(1),
                 TimeSpan.FromSeconds(2),
-                TimeSpan.FromSeconds(3)
+                TimeSpan.FromSeconds(4)
             };
 
             var measurements = new List<Result>(targetedTimeLapses.Length);
             foreach (TimeSpan timeLapse in targetedTimeLapses)
             {
-                var load = (uint)(loadPerSecond * timeLapse.Seconds); // eingeschätzt
+                var load = (uint)(loadPerSecond * timeLapse.TotalSeconds); // eingeschätzt
                 TimeSpan elapsed = Measure(implementation, load);
                 measurements.Add(new Result(load, elapsed));
             }
